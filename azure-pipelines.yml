@@ -15,10 +15,9 @@ jobs:
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
 
-    # Now publish the single JAR artifact
     - task: PublishBuildArtifacts@1
       displayName: 'Publish JAR artifact'
       inputs:
-        PathtoPublish: 'target/maven-junit5-example-1.0-SNAPSHOT.jar'
+        PathtoPublish: 'target/*.jar'
         ArtifactName: 'my-app-jar'
         publishLocation: 'Container'
